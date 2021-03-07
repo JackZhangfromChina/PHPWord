@@ -1,16 +1,16 @@
 .. _intro:
 
-Introduction
+说明
 ============
 
-PHPWord is a library written in pure PHP that provides a set of classes
-to write to and read from different document file formats. The current
-version of PHPWord supports Microsoft `Office Open
+PHPWord是一个用纯PHP编写的库，它提供了一组类
+写入和读取不同的文档文件格式。 当前
+PHPWord版本支持微软的 Office Open
 XML <http://en.wikipedia.org/wiki/Office_Open_XML>`__ (OOXML or
-OpenXML), OASIS `Open Document Format for Office
-Applications <http://en.wikipedia.org/wiki/OpenDocument>`__
-(OpenDocument or ODF), and `Rich Text
-Format <http://en.wikipedia.org/wiki/Rich_Text_Format>`__ (RTF).
+OpenXML), OASIS的 `Office开放文档格式
+应用程序  <http://en.wikipedia.org/wiki/OpenDocument>`__
+(OpenDocument or ODF), and `富文本
+格式 <http://en.wikipedia.org/wiki/Rich_Text_Format>`__ (RTF).
 
 PHPWord is an open source project licensed under the terms of `LGPL
 version 3 <https://github.com/PHPOffice/PHPWord/blob/develop/COPYING.LESSER>`__.
@@ -21,45 +21,45 @@ You can learn more about PHPWord by reading this Developers'
 Documentation and the `API
 Documentation <http://phpoffice.github.io/PHPWord/docs/develop/>`__.
 
-Features
+特性
 --------
 
-- Set document properties, e.g. title, subject, and creator.
-- Create document sections with different settings, e.g.
-  portrait/landscape, page size, and page numbering
-- Create header and footer for each sections
-- Set default font type, font size, and paragraph style
-- Use UTF-8 and East Asia fonts/characters
-- Define custom font styles (e.g. bold, italic, color) and paragraph
-  styles (e.g. centered, multicolumns, spacing) either as named style
-  or inline in text
-- Insert paragraphs, either as a simple text or complex one (a text
-  run) that contains other elements
-- Insert titles (headers) and table of contents
-- Insert text breaks and page breaks
-- Insert right-to-left text
-- Insert and format images, either local, remote, or as page watermarks
-- Insert binary OLE Objects such as Excel or Visio
-- Insert and format table with customized properties for each rows
-  (e.g. repeat as header row) and cells (e.g. background color,
-  rowspan, colspan)
-- Insert list items as bulleted, numbered, or multilevel
-- Insert hyperlinks
-- Insert footnotes and endnotes
-- Insert drawing shapes (arc, curve, line, polyline, rect, oval)
-- Insert charts (pie, doughnut, bar, line, area, scatter, radar)
-- Insert form fields (textinput, checkbox, and dropdown)
-- Insert comments
-- Create document from templates
-- Use XSL 1.0 style sheets to transform headers, main document part, and footers of an OOXML template
-- ... and many more features on progress
+- 设置文档属性，例如标题、主题和创建者。
+- 创建具有不同设置的文档部分，例如
+纵向/横向、页面大小和页码
+- 为每个部分创建页眉和页脚
+- 设置默认字体类型、字体大小和段落样式
+- 使用UTF-8和东亚字体/字符
+- 定义自定义字体样式 (例如粗体、斜体、颜色) 和段落
+样式 (例如居中、多柱、间距) 作为命名样式
+或内联文本
+- 插入段落，以简单文本或复杂文本 (文本
+运行)，其中包含其他元素
+- 插入标题 (标题) 和目录
+- 插入文本符和分页符
+- 从右到左插入文本
+- 插入和格式化本地、远程或作为页面水印的图像
+- 插入二进制OLE对象，如Excel或Visio
+-为每一行插入和格式化具有自定义属性的表
+(例如，作为标题行重复) 和单元格 (例如，背景色，
+rowspan，colspan)
+- 插入列表项，如项目符号、编号或多级
+- 插入超链接
+- 插入脚注和尾注
+- 插入绘图形状 (圆弧、曲线、线、折线、矩形、椭圆形)
+- 插入图表 (馅饼、甜甜圈、条、线、面积、散射、雷达)
+- 插入表单字段 (文本输入、复选框和下拉菜单)
+- 插入注释
+- 从模板创建文档
+- 使用shrna 1.0样式表转换OOXML模板的标题、主文档部分和页脚
+-……还有更多进展中的功能
 
-File formats
+文件格式
 ------------
 
-Below are the supported features for each file formats.
+以下是每种文件格式支持的功能。
 
-Writers
+写入
 ~~~~~~~
 
 +---------------------------+----------------------+--------+-------+-------+--------+-------+
@@ -120,7 +120,7 @@ Writers
 |                           | Protection           |        |       |       |        |       |
 +---------------------------+----------------------+--------+-------+-------+--------+-------+
 
-Readers
+读取
 ~~~~~~~
 
 +---------------------------+----------------------+--------+-------+-------+-------+-------+
@@ -181,19 +181,15 @@ Readers
 |                           | Protection           |        |       |       |       |       |
 +---------------------------+----------------------+--------+-------+-------+-------+-------+
 
-Contributing
+贡献
 ------------
 
-We welcome everyone to contribute to PHPWord. Below are some of the
-things that you can do to contribute.
+我们欢迎大家为PHPWord做出贡献。以下是一些你可以做的贡献。
 
-- Read `our contributing
-  guide <https://github.com/PHPOffice/PHPWord/blob/master/CONTRIBUTING.md>`__.
-- `Fork us <https://github.com/PHPOffice/PHPWord/fork>`__ and `request
-  a pull <https://github.com/PHPOffice/PHPWord/pulls>`__ to the
+- 读 `我们的贡献指南 <https://github.com/PHPOffice/PHPWord/blob/master/CONTRIBUTING.md>`__.
+- `Fork us <https://github.com/PHPOffice/PHPWord/fork>`__ 然后 `拉取 <https://github.com/PHPOffice/PHPWord/pulls>`__ 
   `develop <https://github.com/PHPOffice/PHPWord/tree/develop>`__
-  branch.
-- Submit `bug reports or feature
-  requests <https://github.com/PHPOffice/PHPWord/issues>`__ to GitHub.
-- Follow `@PHPWord <https://twitter.com/PHPWord>`__ and
-  `@PHPOffice <https://twitter.com/PHPOffice>`__ on Twitter.
+  分支。
+- 提交 `提交bug或特性请求 <https://github.com/PHPOffice/PHPWord/issues>`__ 到 GitHub。
+- 关注 `@PHPWord <https://twitter.com/PHPWord>`__ 和
+  `@PHPOffice <https://twitter.com/PHPOffice>`__ 在Twitter。

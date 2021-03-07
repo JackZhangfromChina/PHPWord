@@ -1,14 +1,14 @@
 .. _styles:
 
-Styles
+Styles 样式
 ======
 
 .. _section-style:
 
-Section
+Section 节
 -------
 
-Available Section style options:
+可用节样式选项:
 
 - ``borderBottomColor``. Border bottom color.
 - ``borderBottomSize``. Border bottom size in *twip*.
@@ -37,13 +37,13 @@ Available Section style options:
 
 .. _font-style:
 
-Font
+Font 字体
 ----
 
-Available Font style options:
+可用字体样式选项:
 
-- ``allCaps``. All caps, *true* or *false*.
-- ``bgColor``. Font background color, e.g. *FF0000*.
+- ``allCaps``. A全大写, *true* or *false*.
+- ``bgColor``. 字体背景颜色, e.g. *FF0000*.
 - ``bold``. Bold, *true* or *false*.
 - ``color``. Font color, e.g. *FF0000*.
 - ``doubleStrikethrough``. Double strikethrough, *true* or *false*.
@@ -63,17 +63,17 @@ Available Font style options:
 - ``lang``. Language, either a language code like *en-US*, *fr-BE*, etc. or an object (or as an array) if you need to set eastAsian or bidirectional languages
    See ``\PhpOffice\PhpWord\Style\Language`` class for some language codes.
 - ``position``. The text position, raised or lowered, in half points
-- ``hidden``. Hidden text, *true* or *false*.
+- ``hidden``. 隐藏文本, *true* or *false*.
 
 .. _paragraph-style:
 
-Paragraph
+Paragraph 段落
 ---------
 
-Available Paragraph style options:
+可用段落样式:
 
 - ``alignment``. Supports all alignment modes since 1st Edition of ECMA-376 standard up till ISO/IEC 29500:2012.
-   See ``\PhpOffice\PhpWord\SimpleType\Jc`` class constants for possible values.
+   参见 ``\PhpOffice\PhpWord\SimpleType\Jc`` 类常量找到可用的值.
 - ``basedOn``. Parent style.
 - ``hanging``. Hanging in *twip*.
 - ``indent``. Indent in *twip*.
@@ -98,10 +98,10 @@ Available Paragraph style options:
 
 .. _table-style:
 
-Table
+Table 表格
 -----
 
-Available Table style options:
+可用表格样式:
 
 - ``alignment``. Supports all alignment modes since 1st Edition of ECMA-376 standard up till ISO/IEC 29500:2012.
    See ``\PhpOffice\PhpWord\SimpleType\JcTable`` and ``\PhpOffice\PhpWord\SimpleType\Jc`` class constants for possible values.
@@ -117,7 +117,7 @@ Available Table style options:
 - ``position`` Floating Table Positioning, see below for options
 - ``bidiVisual`` Present table as Right-To-Left
 
-Floating Table Positioning options:
+表格位置浮动样式:
 
 - ``leftFromText`` Distance From Left of Table to Text in *twip*
 - ``rightFromText`` Distance From Right of Table to Text in *twip*
@@ -130,13 +130,13 @@ Floating Table Positioning options:
 - ``tblpYSpec`` Relative Vertical Alignment From Anchor, one of ``\PhpOffice\PhpWord\Style\TablePosition::YALIGN_*``
 - ``tblpY`` Absolute Vertical Distance From Anchorin *twip*
 
-Available Row style options:
+可用行样式选项:
 
 - ``cantSplit``. Table row cannot break across pages, *true* or *false*.
 - ``exactHeight``. Row height is exact or at least.
 - ``tblHeader``. Repeat table row on every new page, *true* or *false*.
 
-Available Cell style options:
+单元格可用演示选项:
 
 - ``bgColor``. Background color, e.g. '9966CC'.
 - ``border(Top|Right|Bottom|Left)Color``. Border color, e.g. '9966CC'.
@@ -146,14 +146,14 @@ Available Cell style options:
    You can use constants ``\PhpOffice\PhpWord\Style\Cell::TEXT_DIR_BTLR`` and ``\PhpOffice\PhpWord\Style\Cell::TEXT_DIR_TBRL``
 - ``valign``. Vertical alignment, *top*, *center*, *both*, *bottom*.
 - ``vMerge``. *restart* or *continue*.
-- ``width``. Cell width in *twip*.
+- ``width``. 以 *twip* 为单位的单元格宽度。
 
 .. _image-style:
 
-Image
+Image 图像
 -----
 
-Available Image style options:
+可用图像样式:
 
 - ``alignment``. See ``\PhpOffice\PhpWord\SimpleType\Jc`` class for the details.
 - ``height``. Height in *pt*.
@@ -168,10 +168,10 @@ Available Image style options:
 
 .. _numbering-level-style:
 
-Numbering level
+Numbering level 编号级别
 ---------------
 
-Available NumberingLevel style options:
+可用编号级别样式:
 
 - ``alignment``. Supports all alignment modes since 1st Edition of ECMA-376 standard up till ISO/IEC 29500:2012.
    See ``\PhpOffice\PhpWord\SimpleType\Jc`` class constants for possible values.
@@ -188,10 +188,10 @@ Available NumberingLevel style options:
 
 .. _chart-style:
 
-Chart
+Chart 图表
 -----
 
-Available Chart style options:
+可用图表样式选项:
 
 - ``width``. Width (in EMU).
 - ``height``. Height (in EMU).

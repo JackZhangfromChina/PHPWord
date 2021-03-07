@@ -1,12 +1,12 @@
 .. _recipes:
 
-Recipes
+Recipes 小记
 =======
 
-Create float left image
+创建左浮动图像
 -----------------------
 
-Use absolute positioning relative to margin horizontally and to line vertically.
+使用相对于水平边距和垂直线的绝对定位。
 
 .. code-block:: php
 
@@ -21,10 +21,10 @@ Use absolute positioning relative to margin horizontally and to line vertically.
     $textrun->addImage('resources/_earth.jpg', $imageStyle);
     $textrun->addText($lipsumText);
 
-Download the produced file automatically
+自动下载生成的文件
 ----------------------------------------
 
-Use ``php://output`` as the filename.
+使用 ``php://output`` 作为文件名.
 
 .. code-block:: php
 
@@ -41,10 +41,11 @@ Use ``php://output`` as the filename.
     $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
     $xmlWriter->save("php://output");
 
-Create numbered headings
+创建编号标题
 ------------------------
 
-Define a numbering style and title styles, and match the two styles (with ``pStyle`` and ``numStyle``) like below.
+
+定义编号样式和标题样式，并将这两种样式 (带有 ``pStyle``和``numStyle``) 匹配，如下所示。
 
 .. code-block:: php
 
@@ -65,10 +66,10 @@ Define a numbering style and title styles, and match the two styles (with ``pSty
     $section->addTitle('Heading 2', 2);
     $section->addTitle('Heading 3', 3);
 
-Add a link within a title
+在标题中添加链接
 -------------------------
 
-Apply 'HeadingN' paragraph style to TextRun or Link. Sample code:
+将 'HeadingN' 段落样式应用于TextRun或Link。示例代码:
 
 .. code-block:: php
 
@@ -87,10 +88,10 @@ Apply 'HeadingN' paragraph style to TextRun or Link. Sample code:
     // Link
     $section->addLink('https://github.com/', 'GitHub', 'Link', 'Heading2');
 
-Remove [Compatibility Mode] text in the MS Word title bar
----------------------------------------------------------
+删除MS Word标题栏中的 [Compatibility Mode] 文本
+----------------------------------------------
 
-Use the ``Metadata\Compatibility\setOoxmlVersion(n)`` method with ``n`` is the version of Office (14 = Office 2010, 15 = Office 2013).
+使用 ``Metadata\Compatibility\setOoxmlVersion(n)`` 方法 其中 ``n`` 为 Office版本 (14 = Office 2010，15 = Office 2013)。
 
 .. code-block:: php
 

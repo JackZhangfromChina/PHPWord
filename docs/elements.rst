@@ -1,10 +1,10 @@
 .. _elements:
 
-Elements
+Elements 元素
 ========
 
-Below are the matrix of element availability in each container. The
-column shows the containers while the rows lists the elements.
+以下是每个容器中的元素可用性矩阵。 
+列显示容器，而行列出元素。
 
 +-------+-----------------+-----------+----------+----------+---------+------------+------------+
 | Num   | Element         | Section   | Header   | Footer   | Cell    | Text Run   | Footnote   |
@@ -52,19 +52,19 @@ column shows the containers while the rows lists the elements.
 
 Legend:
 
-- ``v``. Available.
-- ``v*``. Available only when inside header/footer.
-- ``v**``. Available only when inside section.
-- ``-``. Not available.
-- ``?``. Should be available.
+- ``v``. 可用.
+- ``v*``. 只在 header/footer 中可用.
+- ``v**``. 只在节中可用。
+- ``-``. 不可用.
+- ``?``. 应该可用.
 
-Texts
+Texts 文本
 -----
 
-Text can be added by using ``addText`` and ``addTextRun`` methods.
-``addText`` is used for creating simple paragraphs that only contain texts with the same style.
-``addTextRun`` is used for creating complex paragraphs that contain text with different style (some bold, other
-italics, etc) or other elements, e.g. images or links. The syntaxes are as follow:
+文本可以使用 ``addText`` 和 ``addTextRun`` 被添加。
+``addText`` 用于创建仅包含相同样式的文本的简单段落。
+``addTextRun`` 用于创建包含不同样式的文本的复杂段落 (一些粗体，其他
+斜体等) 或其他元素，例如图像或链接。语法如下:
 
 .. code-block:: php
 
@@ -75,21 +75,21 @@ italics, etc) or other elements, e.g. images or links. The syntaxes are as follo
 - ``$fontStyle``. See :ref:`font-style`.
 - ``$paragraphStyle``. See :ref:`paragraph-style`.
 
-For available styling options see :ref:`font-style` and :ref:`paragraph-style`.
+有关可用样式选项，请参阅:ref:`font-style` and :ref:`paragraph-style`.
 
-If you want to enable track changes on added text you can mark it as INSERTED or DELETED by a specific user at a given time:
+如果要对添加的文本启用跟踪更改，可以为特定用户在给定时间将其标记 INSERTED 或 DELETED :
 
 .. code-block:: php
 
     $text = $section->addText('Hello World!');
     $text->setChanged(\PhpOffice\PhpWord\Element\ChangedElement::TYPE_INSERTED, 'Fred', (new \DateTime()));
 
-Titles
+Titles 标题
 ~~~~~~
 
-If you want to structure your document or build table of contents, you need titles or headings.
-To add a title to the document, use the ``addTitleStyle`` and ``addTitle`` method.
-If `depth` is 0, a Title will be inserted, otherwise a Heading1, Heading2, ...
+如果要构建文档或构建目录，则需要标题或标题。
+要向文档添加标题，请使用 ``addtitlestyle``和`` addtitle``方法。
+如果 `depth` 为0，将插入标题，否则插入标题1，标题2，...
 
 .. code-block:: php
 
@@ -97,16 +97,16 @@ If `depth` is 0, a Title will be inserted, otherwise a Heading1, Heading2, ...
     $section->addTitle($text, [$depth]);
 
 - ``depth``.
-- ``$fontStyle``. See :ref:`font-style`.
-- ``$paragraphStyle``. See :ref:`paragraph-style`.
-- ``$text``. Text to be displayed in the document. This can be `string` or a `\PhpOffice\PhpWord\Element\TextRun`
+- ``$fontStyle``. 参见 :ref:`font-style`.
+- ``$paragraphStyle``. 参见 :ref:`paragraph-style`.
+- ``$text``. 文档中要显示的文本。 可以使`string` 或一个 `\PhpOffice\PhpWord\Element\TextRun`
 
-It's necessary to add a title style to your document because otherwise the title won't be detected as a real title.
+有必要在文档中添加标题样式，否则标题将不会被检测为真实标题。
 
-Links
+Links 链接
 ~~~~~
 
-You can add Hyperlinks to the document by using the function addLink:
+您可以使用函数addLink向文档添加超链接:
 
 .. code-block:: php
 
@@ -117,7 +117,7 @@ You can add Hyperlinks to the document by using the function addLink:
 - ``$fontStyle``. See :ref:`font-style`.
 - ``$paragraphStyle``. See :ref:`paragraph-style`.
 
-Preserve texts
+Preserve texts 
 ~~~~~~~~~~~~~~
 
 The ``addPreserveText`` method is used to add a page number or page count to headers or footers.
@@ -126,13 +126,13 @@ The ``addPreserveText`` method is used to add a page number or page count to hea
 
     $footer->addPreserveText('Page {PAGE} of {NUMPAGES}.');
 
-Breaks
+Breaks 分隔
 ------
 
-Text breaks
+Text breaks 文本分隔
 ~~~~~~~~~~~
 
-Text breaks are empty new lines. To add text breaks, use the following syntax. All parameters are optional.
+文本分隔是空的新行。要添加文本分隔，请使用以下语法。所有参数都是可选的。
 
 .. code-block:: php
 
@@ -142,26 +142,25 @@ Text breaks are empty new lines. To add text breaks, use the following syntax. A
 - ``$fontStyle``. See :ref:`font-style`.
 - ``$paragraphStyle``. See :ref:`paragraph-style`.
 
-Page breaks
+Page breaks 
 ~~~~~~~~~~~
 
-There are two ways to insert a page break, using the ``addPageBreak``
-method or using the ``pageBreakBefore`` style of paragraph.
+有两种方法可以使用 ``addPageBreak`` 插入分页符或使用段落的 ``pageBreakBefore`` 样式。
 
 .. code-block:: php
 
     $section->addPageBreak();
 
-Lists
+Lists 列表
 -----
 
-Lists can be added by using ``addListItem`` and ``addListItemRun`` methods.
-``addListItem`` is used for creating lists that only contain plain text.
-``addListItemRun`` is used for creating complex list items that contains texts
-with different style (some bold, other italics, etc) or other elements, e.g.
-images or links. The syntaxes are as follow:
+可以使用 ``addListItem`` 和`` addListItemRun`` 方法添加列表。
+``AddListItem`` 用于创建仅包含纯文本的列表。
+``AddListItemRun`` 用于创建包含文本的复杂列表项
+具有不同的风格 (一些粗体、其他斜体等) 或其他元素，例如
+图像或链接。语法如下:
 
-Basic usage:
+基本用法:
 
 .. code-block:: php
 
@@ -177,11 +176,11 @@ Parameters:
   TYPE\_ALPHANUM, TYPE\_BULLET\_FILLED, etc. See list of constants in PHPWord\\Style\\ListItem.
 - ``$paragraphStyle``. See :ref:`paragraph-style`.
 
-See ``Sample_09_Tables.php`` for more code sample.
+参考 ``Sample_09_Tables.php`` 获得更多示例.
 
-Advanced usage:
+高级用法:
 
-You can also create your own numbering style by changing the ``$listStyle`` parameter with the name of your numbering style.
+您还可以通过使用编号样式的名称更改 ``$listStyle`` 参数来创建自己的编号样式。
 
 .. code-block:: php
 
@@ -200,12 +199,12 @@ You can also create your own numbering style by changing the ``$listStyle`` para
     $section->addListItem('List Item I.b', 1, null, 'multilevel');
     $section->addListItem('List Item II', 0, null, 'multilevel');
 
-For available styling options see :ref:`numbering-level-style`.
+可用样式参考 :ref:`numbering-level-style`.
 
-Tables
+Tables 表格
 ------
 
-To add tables, rows, and cells, use the ``addTable``, ``addRow``, and ``addCell`` methods:
+要添加表格，行和单元格 使用 ``addTable``, ``addRow``, and ``addCell`` 方法:
 
 .. code-block:: php
 
@@ -213,7 +212,7 @@ To add tables, rows, and cells, use the ``addTable``, ``addRow``, and ``addCell`
     $table->addRow([$height], [$rowStyle]);
     $cell = $table->addCell($width, [$cellStyle]);
 
-Table style can be defined with ``addTableStyle``:
+可以通过 ``addTableStyle`` 定义表格样式:
 
 .. code-block:: php
 
@@ -226,12 +225,12 @@ Table style can be defined with ``addTableStyle``:
     $phpWord->addTableStyle('myTable', $tableStyle, $firstRowStyle);
     $table = $section->addTable('myTable');
 
-For available styling options see :ref:`table-style`.
+可用样式参考 :ref:`table-style`.
 
-Cell span
+Cell span 
 ~~~~~~~~~
 
-You can span a cell on multiple columns by using ``gridSpan`` or multiple rows by using ``vMerge``.
+您可以使用 ``gridSpan`` 跨多列的单元格，也可以使用 ``vMerge`` 跨多行。
 
 .. code-block:: php
 
@@ -240,19 +239,19 @@ You can span a cell on multiple columns by using ``gridSpan`` or multiple rows b
 
 See ``Sample_09_Tables.php`` for more code sample.
 
-Images
+Images 图片
 ------
 
-To add an image, use the ``addImage`` method to sections, headers, footers, textruns, or table cells.
+要添加图像，请对节、页眉、页脚、textrun或表格单元格使用 ``addImage``方法。
 
 .. code-block:: php
 
     $section->addImage($src, [$style]);
 
-- ``$src``. String path to a local image, URL of a remote image or the image data, as a string. Warning: Do not pass user-generated strings here, as that would allow an attacker to read arbitrary files or perform server-side request forgery by passing file paths or URLs instead of image data.
+- ``$src``. 本地图像的字符串路径、远程图像的URL或图像数据 (作为字符串)。警告: 不要在此传递用户生成的字符串，因为这将允许攻击者通过传递文件路径或url而不是图像数据来读取任意文件或执行服务器端请求伪造。
 - ``$style``. See :ref:`image-style`.
 
-Examples:
+示例:
 
 .. code-block:: php
 
@@ -274,12 +273,13 @@ Examples:
     $source = file_get_contents('/path/to/my/images/earth.jpg');
     $textrun->addImage($source);
 
-Watermarks
+Watermarks 水印
 ~~~~~~~~~~
 
-To add a watermark (or page background image), your section needs a
-header reference. After creating a header, you can use the
-``addWatermark`` method to add a watermark.
+
+要添加水印 (或页面背景图像)，您的节需要
+标题参考。创建标题后，您可以使用
+添加水印的 ``addWatermark`` 方法。
 
 .. code-block:: php
 
@@ -287,21 +287,21 @@ header reference. After creating a header, you can use the
     $header = $section->addHeader();
     $header->addWatermark('resources/_earth.jpg', array('marginTop' => 200, 'marginLeft' => 55));
 
-Objects
+Objects 对象
 -------
 
-You can add OLE embeddings, such as Excel spreadsheets or PowerPoint
-presentations to the document by using ``addOLEObject`` method.
+您可以添加OLE嵌入，例如Excel电子表格或PowerPoint
+使用 ``addOLEObject`` 方法对文档进行演示。
 
 .. code-block:: php
 
     $section->addOLEObject($src, [$style]);
 
-Table of contents
+Table of contents 目录
 -----------------
 
-To add a table of contents (TOC), you can use the ``addTOC`` method.
-Your TOC can only be generated if you have add at least one title (See "Titles").
+要添加目录 (TOC)，可以使用 ``addTOC`` 方法。
+只有添加了至少一个标题 (请参阅 "Titles")，才能生成TOC。
 
 .. code-block:: php
 
@@ -318,15 +318,15 @@ Options for ``$tocStyle``:
 - ``tabPos``. The position of the tab where the page number appears in *twip*.
 - ``indent``. The indent factor of the titles in *twip*.
 
-Footnotes & endnotes
+Footnotes & endnotes 脚注和尾注
 --------------------
 
-You can create footnotes with ``addFootnote`` and endnotes with
-``addEndnote`` in texts or textruns, but it's recommended to use textrun
-to have better layout. You can use ``addText``, ``addLink``,
-``addTextBreak``, ``addImage``, ``addOLEObject`` on footnotes and endnotes.
+您可以使用 ``addFootnote`` 创建脚注，并使用
+文本或textruns中的 ``addEndnote``，但建议使用textrun
+获得更好的布局。您可以脚注和尾注上 使用 ``addText`` 、 ``addLink``，
+``addTextBreak``、  ``addImage``、 ``addOLEObject``。
 
-On textrun:
+在 textrun:
 
 .. code-block:: php
 
@@ -342,7 +342,7 @@ On textrun:
     $endnote = $textrun->addEndnote();
     $endnote->addText('Endnote put at the end');
 
-On text:
+在 text:
 
 .. code-block:: php
 
@@ -350,12 +350,13 @@ On text:
     $footnote = $section->addFootnote();
     $footnote->addText('Footnote text.');
 
-By default the footnote reference number will be displayed with decimal number
-starting from 1. This number uses the ``FooterReference`` style which you can
-redefine with the ``addFontStyle`` method. Default value for this style is
+
+默认情况下，脚注参考编号将显示为十进制编号。
+从1开始。该数字使用``FooterReference`` 样式，您可以
+使用 ``addFontStyle`` 方法重新定义。此样式的默认值为
 ``array('superScript' => true)``;
 
-The footnote numbering can be controlled by setting the FootnoteProperties on the Section.
+脚注编号可以通过在该节设置脚注属性来控制。
 
 .. code-block:: php
 
@@ -371,10 +372,10 @@ The footnote numbering can be controlled by setting the FootnoteProperties on th
     //And finaly, set it on the Section
     $section->setFootnoteProperties($properties);
 
-Checkboxes
+Checkboxes 复选框
 ----------
 
-Checkbox elements can be added to sections or table cells by using ``addCheckBox``.
+可以通过 ``addCheckBox`` 将复选框元素添加到节或表格单元格中。
 
 .. code-block:: php
 
@@ -385,15 +386,15 @@ Checkbox elements can be added to sections or table cells by using ``addCheckBox
 - ``$fontStyle``. See :ref:`font-style`.
 - ``$paragraphStyle``. See :ref:`paragraph-style`.
 
-Textboxes
+Textboxes 文本框
 ---------
 
-To be completed
+待完成
 
-Fields
+Fields 域
 ------
 
-Currently the following fields are supported:
+目前支持以下字段:
 
 - PAGE
 - NUMPAGES
@@ -405,7 +406,7 @@ Currently the following fields are supported:
 
     $section->addField($fieldType, [$properties], [$options], [$fieldText])
 
-See ``\PhpOffice\PhpWord\Element\Field`` for list of properties and options available for each field type.
+参考 ``\PhpOffice\PhpWord\Element\Field`` for list of properties and options available for each field type.
 Options which are not specifically defined can be added. Those must start with a ``\``.
 
 For instance for the INDEX field, you can do the following (See `Index Field for list of available options <https://support.office.com/en-us/article/Field-codes-Index-field-adafcf4a-cb30-43f6-85c7-743da1635d9e?ui=en-US&rs=en-US&ad=US>`_ ):
@@ -425,17 +426,17 @@ For instance for the INDEX field, you can do the following (See `Index Field for
     //this actually adds the index
     $section->addField('INDEX', array(), array('\\e "	" \\h "A" \\c "3"'), 'right click to update index');
 
-Line
+Line 行
 ----
 
-Line elements can be added to sections by using ``addLine``.
+可以使用 ``addLine``将行元素添加到节中。
 
 .. code-block:: php
 
     $lineStyle = array('weight' => 1, 'width' => 100, 'height' => 0, 'color' => 635552);
     $section->addLine($lineStyle);
 
-Available line style attributes:
+可用的行样式属性:
 
 - ``weight``. Line width in *twip*.
 - ``color``. Defines the color of stroke.
@@ -446,10 +447,10 @@ Available line style attributes:
 - ``height``. Line-object height in *pt*.
 - ``flip``. Flip the line element: true, false.
 
-Chart
+Chart 图表
 -----
 
-Charts can be added using
+可以通过下方代码添加图表
 
 .. code-block:: php
 
@@ -457,15 +458,15 @@ Charts can be added using
     $series = array(1, 3, 2, 5, 4);
     $chart = $section->addChart('line', $categories, $series, $style);
 
-For available styling options see :ref:`chart-style`.
+可见样式选项参考 :ref:`chart-style`.
 
-check out the Sample_32_Chart.php for more options and styling.
+查看 Sample_32_Chart.php 获得更多选项和样式。
 
-Comments
+Comments 注释
 --------
 
-Comments can be added to a document by using ``addComment``.
-The comment can contain formatted text. Once the comment has been added, it can be linked to any element with ``setCommentStart``.
+可以使用 ``addComment`` 将注释添加到文档中。
+注释可以包含格式化文本。添加注释后，可以将其链接到具有 ``setCommentStart`` 的任何元素。
 
 .. code-block:: php
 
@@ -482,13 +483,13 @@ The comment can contain formatted text. Once the comment has been added, it can 
     // link the comment to the text you just created
     $text->setCommentStart($comment);
 
-If no end is set for a comment using the ``setCommentEnd``, the comment will be ended automatically at the end of the element it is started on.
+如果没有使用 ``setCommentEnd`` 为注释设置结束，则注释将在其启动的元素的末尾自动结束。
 
-Track Changes
+Track Changes 跟踪变化
 -------------
 
-Track changes can be set on text elements. There are 2 ways to set the change information on an element.
-Either by calling the `setChangeInfo()`, or by setting the `TrackChange` instance on the element with `setTrackChange()`.
+可以在文本元素上设置轨道更改。有两种方法可以设置元素的更改信息。
+通过调用 `setChangeInfo()`或使用 `setTrackChange()` 在元素上设置 `TrackChange` 实例。
 
 .. code-block:: php
 

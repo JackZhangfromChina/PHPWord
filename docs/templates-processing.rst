@@ -1,19 +1,19 @@
 .. _templates-processing:
 
-Templates processing
+模板处理
 ====================
 
-You can create an OOXML document template with included search-patterns (macros) which can be replaced by any value you wish. Only single-line values can be replaced.
-Macros are defined like this: ``${search-pattern}``.
-To load a template file, create a new instance of the TemplateProcessor.
+您可以使用包含的搜索模式 (宏) 创建OOXML文档模板，该模板可以替换为您想要的任何值。只能替换单行值。
+宏的定义如下: ``${search-pattern}``。
+要加载模板文件，请创建模板处理器的新实例。
 
 .. code-block:: php
 
     $templateProcessor = new TemplateProcessor('Template.docx');
 
-setValue
+设单值
 """"""""
-Given a template containing
+给模板包含的一个替换
 
 .. code-block:: clean
 
@@ -27,17 +27,17 @@ The resulting document will now contain ``Hello John Doe!``
     $templateProcessor->setValue('firstname', 'John');
     $templateProcessor->setValue('lastname', 'Doe');
 
-setValues
+设置一组值
 """""""""
-You can also set multiple values by passing all of them in an array.
+你还可以通过在数组中传递所有值来设置多个值。
 
 .. code-block:: php
 
     $templateProcessor->setValues(array('firstname' => 'John', 'lastname' => 'Doe'));
 
-setImageValue
+setImageValue 设置图像值
 """""""""""""
-The search-pattern model for images can be like:
+要寻找的图像模式可能像下面的模式:
     - ``${search-image-pattern}``
     - ``${search-image-pattern:[width]:[height]:[ratio]}``
     - ``${search-image-pattern:[width]x[height]}``
@@ -64,10 +64,10 @@ Example:
     $templateProcessor->setImageValue('CompanyLogo', 'path/to/company/logo.png');
     $templateProcessor->setImageValue('UserLogo', array('path' => 'path/to/logo.png', 'width' => 100, 'height' => 100, 'ratio' => false));
 
-cloneBlock
+克隆块
 """"""""""
-Given a template containing
-See ``Sample_23_TemplateBlock.php`` for an example.
+模板中包含
+参考 ``Sample_23_TemplateBlock.php`` 为示例.
 
 .. code-block:: clean
 
@@ -76,14 +76,14 @@ See ``Sample_23_TemplateBlock.php`` for an example.
     Address: ${customer_address}
     ${/block_name}
 
-The following will duplicate everything between ``${block_name}`` and ``${/block_name}`` 3 times.
+以下内容将复制 ``${block_name}`` 和 ``${/block_name}`` 之间的所有内容3次。
 
 .. code-block:: php
 
     $templateProcessor->cloneBlock('block_name', 3, true, true);
 
-The last parameter will rename any macro defined inside the block and add #1, #2, #3 ... to the macro name.
-The result will be
+最后一个参数将重命名块中定义的任何宏，并添加 #1、 #2、 #3...到宏名称。
+结果将是
 
 .. code-block:: clean
 
@@ -96,8 +96,8 @@ The result will be
     Customer: ${customer_name#3}
     Address: ${customer_address#3}
 
-It is also possible to pass an array with the values to replace the marcros with.
-If an array with replacements is passed, the ``count`` argument is ignored, it is the size of the array that counts.
+也可以传递带有值的数组来替换marcros。
+如果传递了带有替换项的数组，则忽略 ``count`` 参数，它是计数数组的大小。
 
 .. code-block:: php
 
@@ -107,7 +107,7 @@ If an array with replacements is passed, the ``count`` argument is ignored, it i
     );
     $templateProcessor->cloneBlock('block_name', 0, true, false, $replacements);
 
-The result will then be
+结果将是
 
 .. code-block:: clean
 
@@ -117,34 +117,33 @@ The result will then be
     Customer: Superman
     Address: Metropolis
 
-replaceBlock
+replaceBlock 替换块
 """"""""""""
-Given a template containing
-
+模板内容包含
 .. code-block:: clean
 
     ${block_name}
     This block content will be replaced
     ${/block_name}
 
-The following will replace everything between``${block_name}`` and ``${/block_name}`` with the value passed.
+以下内容将 ``${block_name}`` 和 ``${/block_name}`` 之间的所有内容替换为传递的值。
 
 .. code-block:: php
 
     $templateProcessor->replaceBlock('block_name', 'This is the replacement text.');
 
-deleteBlock
+deleteBlock 删除块
 """""""""""
-Same as previous, but it deletes the block
+和之前类似，但是删除块
 
 .. code-block:: php
 
     $templateProcessor->deleteBlock('block_name');
 
-cloneRow
+cloneRow 克隆行
 """"""""
-Clones a table row in a template document.
-See ``Sample_07_TemplateCloneRow.php`` for an example.
+模板文档中克隆表格的一行
+参考 ``Sample_07_TemplateCloneRow.php`` 示例.
 
 .. code-block:: clean
 
@@ -158,7 +157,7 @@ See ``Sample_07_TemplateCloneRow.php`` for an example.
 
     $templateProcessor->cloneRow('userId', 2);
 
-Will result in
+结果将为
 
 .. code-block:: clean
 
@@ -172,9 +171,10 @@ Will result in
     |             | ${userAddress#2} |
     +-------------+------------------+
 
-cloneRowAndSetValues
-""""""""""""""""""""
-Finds a row in a table row identified by `$search` param and clones it as many times as there are entries in `$values`.
+cloneRowAndSetValues 克隆并赋值
+""""""""""""""""""""""""""""""
+
+在由 `$search` 参数标识的表行中查找行，并将其克隆到`$values`中的条目的次数。
 
 .. code-block:: clean
 
@@ -192,7 +192,7 @@ Finds a row in a table row identified by `$search` param and clones it as many t
     ];
     $templateProcessor->cloneRowAndSetValues('userId', );
 
-Will result in
+结果将是
 
 .. code-block:: clean
 
@@ -206,9 +206,10 @@ Will result in
     |   | Metropolis  |
     +---+-------------+
 
-applyXslStyleSheet
+应用xsl样式表
 """"""""""""""""""
-Applies the XSL stylesheet passed to header part, footer part and main part
+
+应用传递给页眉部分、页脚部分和主要部分的XSL样式表
 
 .. code-block:: php
 
@@ -216,10 +217,11 @@ Applies the XSL stylesheet passed to header part, footer part and main part
     $xslDomDocument->load('/path/to/my/stylesheet.xsl');
     $templateProcessor->applyXslStyleSheet($xslDomDocument);
 
-setComplexValue
+设置复杂值
 """""""""""""""
-Raplaces a ${macro} with the ComplexType passed.
-See ``Sample_40_TemplateSetComplexValue.php`` for examples.
+
+将 ${macro} 删除，并传递复杂类型。
+参见 ``Sample_40_TemplateSetComplexValue.php``示例。
 
 .. code-block:: php
 
@@ -227,10 +229,10 @@ See ``Sample_40_TemplateSetComplexValue.php`` for examples.
     $inline->addText('by a red italic text', array('italic' => true, 'color' => 'red'));
     $templateProcessor->setComplexValue('inline', $inline);
 
-setComplexBlock
+设置复杂块
 """""""""""""""
-Raplaces a ${macro} with the ComplexType passed.
-See ``Sample_40_TemplateSetComplexValue.php`` for examples.
+将 ${macro} 删除，并传递复杂类型。
+参见 ``Sample_40_TemplateSetComplexValue.php`` 示例。
 
 .. code-block:: php
 

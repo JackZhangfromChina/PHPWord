@@ -6,7 +6,7 @@ Writers & readers
 OOXML
 -----
 
-The package of OOXML document consists of the following files.
+OOXML 文档包 由下文件构成。
 
 - \_rels/
 
@@ -44,7 +44,7 @@ OpenDocument
 Package
 ~~~~~~~
 
-The package of OpenDocument document consists of the following files.
+OpenDocument 文档包 由下文件构成。
 
 - META-INF/
 
@@ -58,7 +58,7 @@ The package of OpenDocument document consists of the following files.
 content.xml
 ~~~~~~~~~~~
 
-The structure of ``content.xml`` is described below.
+``content.xml`` 的结构如下所示。
 
 - office:document-content
 
@@ -84,7 +84,7 @@ The structure of ``content.xml`` is described below.
 styles.xml
 ~~~~~~~~~~
 
-The structure of ``styles.xml`` is described below.
+``styles.xml`` 的结构如下所示。
 
 - office:document-styles
 
@@ -97,14 +97,14 @@ The structure of ``styles.xml`` is described below.
 RTF
 ---
 
-To be completed.
+待完成。
 
 HTML
 ----
 
-To be completed.
+待完成。
 
 PDF
 ---
 
-To be completed.
+待完成。
